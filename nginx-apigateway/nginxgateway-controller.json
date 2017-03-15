@@ -1,0 +1,54 @@
+{
+  "apiVersion": "v1",
+  "kind": "ReplicationController",
+  "metadata": {
+    "name": "nginxgateway-rc"
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "app": "nginxgateway"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "nginxgateway"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "nginxgateway",
+            "image": "ernstdemo/nginxgateway",
+            "imagePullPolicy": "Always",
+            "ports": [
+              {
+               "containerPort": 80
+              }
+            ],
+            "volumeMounts": [
+              {
+                "mountPath": "/etc/nginx/conf.d",
+                "name": "etc-nginx-confd"
+              }
+            ]
+          }
+        ],
+                "imagePullSecrets": [
+                      {
+                         "name": "mykey"
+                      }
+         ],
+        "volumes": [
+          {
+            "hostPath": {
+              "path": "/etc/nginx/conf.d"
+            },
+            "name": "etc-nginx-confd"
+          }
+        ]
+
+      }
+    }
+  }
+}

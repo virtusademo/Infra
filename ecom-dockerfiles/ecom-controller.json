@@ -1,0 +1,50 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"helloworld",
+      "labels":{
+         "app":"helloworld"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "app":"helloworld"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"helloworld"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"master",
+                  "image":"ernstdemo/helloworld",
+                  "imagePullPolicy": "Always",
+                  "ports":[
+                     {
+                        "name":"tomcat-port",
+                        "containerPort":8080
+                     }
+                  ],
+                        "env": [
+                          {
+                                "name": "SERVICE_NAME",
+                                "value": "helloworld"
+                          }
+                        ]
+
+               }
+            ],
+                    "imagePullSecrets": [
+                      {
+                         "name": "mykey"
+                      }
+         ]
+       }
+      }
+   }
+}
