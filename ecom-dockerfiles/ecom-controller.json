@@ -22,7 +22,7 @@
             "containers":[
                {
                   "name":"master",
-                  "image":"ernstdemo/helloworld",
+                  "image":"virtusademo/helloworld",
                   "imagePullPolicy": "Always",
                   "ports":[
                      {
