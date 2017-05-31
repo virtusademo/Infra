@@ -19,7 +19,7 @@
         "containers": [
           {
             "name": "nginxgateway",
-            "image": "virtusademo/nginxapigateway",
+            "image": "virtusademo/nginxapigateway:npowd",
             "imagePullPolicy": "Always",
             "ports": [
               {
