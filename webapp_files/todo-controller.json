@@ -22,7 +22,7 @@
             "containers":[
                {
                   "name":"master",
-                  "image":"sureshaws2143/todo",
+                  "image":"virtusademo/todo",
                   "imagePullPolicy": "Always",
                   "ports":[
                      {
