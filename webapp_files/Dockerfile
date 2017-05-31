@@ -4,7 +4,7 @@ RUN cd /opt && wget --no-cookies --no-check-certificate --header "Cookie: gpw_e2
     tar xzf jdk-8u131-linux-x64.tar.gz && \
     wget http://www.eu.apache.org/dist/tomcat/tomcat-7/v7.0.78/bin/apache-tomcat-7.0.78.tar.gz && \
      tar zxpvf apache-tomcat-7.0.78.tar.gz
-ENV JAVA_HOME /opt/jdk1.8.0_111
+ENV JAVA_HOME /opt/jdk1.8.0_131
 ENV CATALINA_HOME /opt/apache-tomcat-7.0.78
 ENV PATH $PATH:$JAVA_HOME/bin
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin
