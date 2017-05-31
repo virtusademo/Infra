@@ -6,14 +6,14 @@ CATALINA_OPTS=${CATALINA_OPTS:-"-Xms128m -Xmx1024m -XX:PermSize=128m -XX:MaxPerm
 
 export CATALINA_OPTS="${CATALINA_OPTS}"
 
-cat << EOF > /opt/apache-tomcat-7.0.76/conf/tomcat-users.xml
+cat << EOF > /opt/apache-tomcat-7.0.78/conf/tomcat-users.xml
 <?xml version='1.0' encoding='utf-8'?>
 <tomcat-users>
 <user username="${ADMIN_USER}" password="${ADMIN_PASS}" roles="admin-gui,manager-gui"/>
 </tomcat-users>
 EOF
 
-if [ -f "/opt/apache-tomcat-7.0.76/webapps/manager/WEB-INF/web.xml" ]
+if [ -f "/opt/apache-tomcat-7.0.78/webapps/manager/WEB-INF/web.xml" ]
 then
 	sed -i "s#.*max-file-size.*#\t<max-file-size>${MAX_UPLOAD_SIZE}</max-file-size>#g" /opt/tomcat/webapps/manager/WEB-INF/web.xml
 	sed -i "s#.*max-request-size.*#\t<max-request-size>${MAX_UPLOAD_SIZE}</max-request-size>#g" /opt/tomcat/webapps/manager/WEB-INF/web.xml
@@ -21,4 +21,4 @@ fi
 
 
 
-exec /opt/apache-tomcat-7.0.76/bin/catalina.sh run
+exec /opt/apache-tomcat-7.0.78/bin/catalina.sh run
