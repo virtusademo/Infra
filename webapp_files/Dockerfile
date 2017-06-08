@@ -12,5 +12,5 @@ ADD ./run.sh /usr/local/bin/run
 EXPOSE 8080
 RUN chmod +x /usr/local/bin/run
 ENTRYPOINT ["/usr/local/bin/run"]
-COPY AngularJSRestful-0.0.1-SNAPSHOT.war /opt/apache-tomcat-7.0.78/webapps
-RUN cd /opt/apache-tomcat-7.0.78/webapps && mv AngularJSRestful-0.0.1-SNAPSHOT.war app.war
+COPY CounterWebApp-1.0.war /opt/apache-tomcat-7.0.78/webapps
+RUN cd /opt/apache-tomcat-7.0.78/webapps && mv CounterWebApp-1.0.war vapp.war
