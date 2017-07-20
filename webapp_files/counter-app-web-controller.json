@@ -22,12 +22,12 @@
             "containers":[
                {
                   "name":"master",
-                  "image":"virtusademo/webapp:1.0",
+                  "image":"virtusademo/cwebapp:1.0",
                   "imagePullPolicy": "Always",
                   "ports":[
                      {
                         "name":"tomcat-port",
-                        "containerPort":80
+                        "containerPort":8080
                      }
                   ],
                         "env": [
